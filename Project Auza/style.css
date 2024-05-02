@@ -30,13 +30,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #77a8a8;
+    background:  #000000;
     transition: 0.5s;
     z-index: 1000;
 }
 
 header.sticky {
-    background: #77a8a8;
+    background:  #000000;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
