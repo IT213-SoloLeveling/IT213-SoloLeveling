@@ -1,24 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins' , sans-serif;
+    font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
-body{
-    background: #050e2d;
+
+body {
+    background: #000;
 }
-     ::-webkit-scrollbar{
-        width: 12px;
-    }
-    ::-webkit-scrollbar-thumb{
-        background: #1aeeef;
-        border-radius: 6px;
-    }
 
+::-webkit-scrollbar {
+    width: 12px;
+}
 
-header{
+::-webkit-scrollbar-thumb {
+    background: #1aeeef;
+    border-radius: 6px;
+}
+
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -27,42 +30,49 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #1b2141;
+    background: #77a8a8;
     transition: 0.5s;
     z-index: 1000;
 }
-header.sticky{
-    background: #1b2141;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+
+header.sticky {
+    background: #77a8a8;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
-header .logo{
+
+header .logo {
     position: relative;
     color: #fff;
     text-decoration: none;
     font-size: 2em;
     font-weight: 700;
 }
-header .nav{
+
+header .nav {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-header ul li{
+
+header ul li {
     list-style: none;
     margin: 10px;
 }
-header ul li a{
+
+header ul li a {
     color: #fff;
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 5px;
 }
-header ul li a:hover{
+
+header ul li a:hover {
     background: #1aeeef;
     color: #050e2d;
     box-shadow: 0 0 10px #1aeeef;
 }
-header .actions .searchBox{
+
+header .actions .searchBox {
     padding: 5px;
     margin: 5px;
     display: flex;
@@ -71,18 +81,21 @@ header .actions .searchBox{
     background: #fff;
     border-radius: 5px;
 }
-header .actions .searchBox i{
+
+header .actions .searchBox i {
     font-size: 1.4em;
     margin: 5px;
     color: #222;
 }
-header .actions .searchBox input{
-    outline:none;
+
+header .actions .searchBox input {
+    outline: none;
     border: none;
     font-size: 1em;
     color: #222;
 }
-.banner{
+
+.banner {
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -91,29 +104,34 @@ header .actions .searchBox input{
     justify-content: center;
     align-items: center;
 }
-.banner .bg{
-    position:relative;
-    width:100%;
+
+.banner .bg {
+    position: relative;
+    width: 100%;
     min-height: 100vh;
     display: flex;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
 }
-.banner .bg .content{
+
+.banner .bg .content {
     width: 50%;
-    height:100%;
+    height: 100%;
 }
-.banner .bg .content h2{
+
+.banner .bg .content h2 {
     font-size: 4em;
     color: #fff;
     letter-spacing: 1px;
 }
-.banner .bg .content p{
+
+.banner .bg .content p {
     font-size: 1em;
     color: #dbd9d9;
     letter-spacing: 1px;
 }
-.banner .bg .content a{
+
+.banner .bg .content a {
     display: inline-block;
     padding: 10px 20px;
     margin: 20px 0;
@@ -125,17 +143,18 @@ header .actions .searchBox input{
     letter-spacing: 1px;
 }
 
-.banner .bg .content a:hover{
+.banner .bg .content a:hover {
     background: #1aeeef;
     border: none;
     color: #050e2d;
     box-shadow: 0 0 10px #1aeeef;
 }
-    .banner .bg img{
-        width: 600px;
-    }
 
-.about{
+.banner .bg img {
+    width: 600px;
+}
+
+.about {
     position: relative;
     width: 100%;
     min-height: 75vh;
@@ -144,23 +163,25 @@ header .actions .searchBox input{
     justify-content: space-between;
     align-items: center;
 }
-.about .contentBx{
+
+.about .contentBx {
     width: 50%;
     margin: 20px;
-
 }
-.about .contentBx h2{
+
+.about .contentBx h2 {
     font-size: 3em;
     font-weight: 700;
     color: #fff;
 }
-.about .contentBx p{
-    max-width:  600px;
+
+.about .contentBx p {
+    max-width: 600px;
     text-align: justify;
-    color: #dbd9d9 ;
+    color: #dbd9d9;
 }
 
-.about .contentBx a{
+.about .contentBx a {
     display: inline-block;
     padding: 10px 20px;
     margin: 20px 0;
@@ -171,15 +192,15 @@ header .actions .searchBox input{
     color: #fff;
     letter-spacing: 1px;
 }
-.about .contentBx a:hover{
+
+.about .contentBx a:hover {
     background: #1aeeef;
     border: none;
     color: #050e2d;
     box-shadow: 0 0 10px #1aeeef;
 }
 
-
-.games{
+.games {
     padding: 0px 100px;
     width: 100%;
     min-height: 100vh;
@@ -188,24 +209,22 @@ header .actions .searchBox input{
     align-items: center;
     flex-direction: column;
     margin: 40px auto;
-
 }
-.games h2{
+
+.games h2 {
     color: #fff;
     margin: 10px 0;
-
 }
 
-.games ul{
+.games ul {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 20px;
-
 }
 
-.games ul li{
+.games ul li {
     list-style: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -213,13 +232,12 @@ header .actions .searchBox input{
     letter-spacing: 1px;
     cursor: pointer;
     color: #fff;
-
 }
-.games ul li.active{
+
+.games ul li.active {
     background: #1aeeef;
     color: #050e2d;
     box-shadow: 0 0 10px #1aeeef;
-
 }
 
 .games .cardBx {
@@ -253,7 +271,8 @@ header .actions .searchBox input{
     color: #fff;
     margin: 15px 0;
 }
-.games .cardBx .card .progress-line{
+
+.games .cardBx .card .progress-line {
     position: relative;
     height: 10px;
     width: 100%;
@@ -262,9 +281,10 @@ header .actions .searchBox input{
     border-radius: 10px;
     transform: scaleX(0);
     transform-origin: left;
-    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
 }
-.games .cardBx .card .progress-line span{
+
+.games .cardBx .card .progress-line span {
     position: absolute;
     height: 100%;
     width: 80%;
@@ -273,29 +293,33 @@ header .actions .searchBox input{
     box-shadow: 0 0 10px #1aeeef;
     transform: scaleX(0);
     transform-origin: left;
-    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
 }
 
-@keyframes animate{
-    100%{
+@keyframes animate {
+    100% {
         transform: scaleX(1);
     }
 }
-.games .cardBx .card .info{
+
+.games .cardBx .card .info {
     border-top: 2px solid #35407e;
     padding: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.games .cardBx .card .info p{
+
+.games .cardBx .card .info p {
     font-size: 1em;
     color: #fff;
 }
-.games .cardBx .card .info p span{
+
+.games .cardBx .card .info p span {
     color: #1aeeef;
 }
-.games .cardBx .card .info a{
+
+.games .cardBx .card .info a {
     display: inline-block;
     padding: 10px 20px;
     margin: 10px 0;
@@ -306,50 +330,51 @@ header .actions .searchBox input{
     color: #fff;
     letter-spacing: 1px;
 }
-.games .cardBx .card .info a:hover{ 
+
+.games .cardBx .card .info a:hover {
     background: #1aeeef;
     border: none;
     color: #050e2d;
     box-shadow: 0 0 10px #1aeeef;
 }
-   
 
-
-
-.games .cardBx .card.hide{
+.games .cardBx .card.hide {
     display: none;
 }
 
-
-.contact{
+.contact {
     padding: 20px 100px;
     width: 100%;
     min-height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-.contact img{
-      height: 100%; 
-      width: 50%;
-      object-fit: cover;
-      border-radius: 10px;
 
+.contact img {
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+    border-radius: 10px;
 }
-.contact .form{
+
+.contact .form {
     width: 50%;
     margin: 30px;
 }
-.contact .form h1{
+
+.contact .form h1 {
     color: #fff;
 }
-.contact .form .inputBx{
+
+.contact .form .inputBx {
     margin: 10px 0;
 }
-.contact .form .inputBx p{
+
+.contact .form .inputBx p {
     color: #fff;
 }
+
 .contact .form .inputBx input,
 .contact .form .inputBx textarea {
     border: none;
@@ -361,10 +386,12 @@ header .actions .searchBox input{
     min-height: 15px;
     font-size: 1.1em;
 }
-.contact .form .inputBx textarea{
+
+.contact .form .inputBx textarea {
     height: 150px;
 }
-.contact .form .inputBx input[type="submit"]{
+
+.contact .form .inputBx input[type="submit"] {
     display: inline-block;
     padding: 10px 20px;
     margin: 15px 0;
@@ -378,38 +405,44 @@ header .actions .searchBox input{
     color: #fff;
     letter-spacing: 1px;
 }
-.contact .form .inputBx input[type="submit"]:hover{
+
+.contact .form .inputBx input[type="submit"]:hover {
     background: #1aeeef;
     border: none;
     color: #050e2d;
     box-shadow: 0 0 10px #1aeeef;
 }
 
-footer{
+footer {
     padding: 10px 100px;
 }
-footer .info{
+
+footer .info {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-footer .info .logo{
+
+footer .info .logo {
     position: relative;
     color: #fff;
     text-decoration: none;
     font-size: 2em;
     font-weight: 700;
 }
-footer .info p{
+
+footer .info p {
     color: #dbd9d9;
 }
-footer .info ul{
+
+footer .info ul {
     margin: 10px 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-footer .info ul li{
+
+footer .info ul li {
     list-style: none;
     height: 50px;
     width: 50px;
@@ -421,40 +454,39 @@ footer .info ul li{
     border: 1px solid #1aeeef;
 }
 
-footer .info ul li:hover{
+footer .info ul li:hover {
     background: #1aeeef;
     border: none;
     box-shadow: 0 0 10px #1aeeef;
 }
-footer .info ul li a i{
+
+footer .info ul li a i {
     font-size: 1.5em;
     color: #fff;
 }
-footer .info ul li:hover a i{
+
+footer .info ul li:hover a i {
     color: #050e2d;
 }
 
-.animeX{
+.animeX {
     position: relative;
     transform: translateY(150px);
     opacity: 0;
     transition: all 2s ease;
 }
-.animeX.active{
+
+.animeX.active {
     transform: translateY(0px);
     opacity: 1;
-
 }
 
-
-
-@media (max-width: 991px)
-{
-    header
-    {
+@media (max-width: 991px) {
+    header {
         padding: 15px 40px;
     }
-    header.nav{
+
+    header.nav {
         position: fixed;
         top: 0;
         left: 0;
@@ -465,20 +497,23 @@ footer .info ul li:hover a i{
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        z-index:1000;
+        z-index: 1000;
     }
-    
-   header .nav .active{
-    display: flex;
-   }
-    header.nav li{
+
+    header .nav .active {
+        display: flex;
+    }
+
+    header.nav li {
         margin: 20px 0;
-}
-    header.nav li a{
+    }
+
+    header.nav li a {
         font-size: 24px;
         margin: 10px 0;
     }
-    .toggleMenu{
+
+    .toggleMenu {
         position: relative;
         width: 30px;
         height: 30px;
@@ -489,17 +524,20 @@ footer .info ul li:hover a i{
         cursor: pointer;
         z-index: 1001;
     }
-    .toggleMenu.active{
+
+    .toggleMenu.active {
         background: url(close.png);
         background-position: center;
         background-size: 30px;
         background-repeat: no-repeat;
     }
-    .banner ,bg img{
+
+    .banner,
+    bg img {
         position: absolute;
     }
-    
-        .banner .bg .content{
+
+    .banner .bg .content {
         width: 100%;
         height: 100%;
         background: rgb(27 33 65 / 50%);
@@ -508,32 +546,36 @@ footer .info ul li:hover a i{
         border-radius: 10px;
     }
 
-    .about{
+    .about {
         flex-direction: column;
     }
-    .about .contentBx{
-        width: 100%;
 
+    .about .contentBx {
+        width: 100%;
     }
-    .contact{
+
+    .contact {
         flex-direction: column;
     }
-    .contact img{
+
+    .contact img {
         height: 100%;
         width: 100%;
     }
-    .contact .form{
+
+    .contact .form {
         width: 100%;
         margin: 30px;
         padding: 10px;
     }
-    .contact .form h1{
+
+    .contact .form h1 {
         text-align: center;
     }
-    footer .info{
+
+    footer .info {
         flex-direction: column;
     }
-
 
     #loginSignupButtons {
         display: none;
@@ -547,7 +589,7 @@ footer .info ul li:hover a i{
         border-radius: 10px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     }
-    
+
     #loginSignupButtons a {
         display: none;
         margin-top: 10px;
@@ -559,14 +601,14 @@ footer .info ul li:hover a i{
         color: #fff;
         letter-spacing: 1px;
     }
-    
+
     #loginSignupButtons a:hover {
         background: #1aeeef;
         border: none;
         color: #050e2d;
         box-shadow: 0 0 10px #1aeeef;
     }
-    
+
     #loginSignupButtons.show {
         display: block;
     }
