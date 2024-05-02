@@ -27,7 +27,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    background: #1b2141;
     transition: 0.5s;
     z-index: 1000;
 }
@@ -127,7 +127,7 @@ header .actions .searchBox input{
 
 .banner .bg .content a:hover{
     background: #1aeeef;
-    border: none
+    border: none;
     color: #050e2d;
     box-shadow: 0 0 10px #1aeeef;
 }
@@ -155,7 +155,7 @@ header .actions .searchBox input{
     color: #fff;
 }
 .about .contentBx p{
-    max: width 600px;
+    max-width:  600px;
     text-align: justify;
     color: #dbd9d9 ;
 }
@@ -173,7 +173,7 @@ header .actions .searchBox input{
 }
 .about .contentBx a:hover{
     background: #1aeeef;
-    border: none
+    border: none;
     color: #050e2d;
     box-shadow: 0 0 10px #1aeeef;
 }
@@ -306,12 +306,14 @@ header .actions .searchBox input{
     color: #fff;
     letter-spacing: 1px;
 }
-.games .cardBx .card .info a:hover{
+.games .cardBx .card .info a:hover{ 
     background: #1aeeef;
-    border: none
+    border: none;
     color: #050e2d;
     box-shadow: 0 0 10px #1aeeef;
 }
+   
+
 
 
 .games .cardBx .card.hide{
@@ -432,6 +434,20 @@ footer .info ul li:hover a i{
     color: #050e2d;
 }
 
+.animeX{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+.animeX.active{
+    transform: translateY(0px);
+    opacity: 1;
+
+}
+
+
+
 @media (max-width: 991px)
 {
     header
@@ -441,16 +457,20 @@ footer .info ul li:hover a i{
     header.nav{
         position: fixed;
         top: 0;
-        left 0;
-        right 0;
+        left: 0;
+        right: 0;
         bottom: 0;
         background: #1b2141;
-        display: flex;
+        display: none;
+        justify-content: center;
         align-items: center;
         flex-direction: column;
         z-index:1000;
     }
     
+   header .nav .active{
+    display: flex;
+   }
     header.nav li{
         margin: 20px 0;
 }
@@ -460,9 +480,9 @@ footer .info ul li:hover a i{
     }
     .toggleMenu{
         position: relative;
-        width 30px;
+        width: 30px;
         height: 30px;
-        background: url(images/menu.jpg);
+        background: url(menu.png);
         background-position: center;
         background-size: 30px;
         background-repeat: no-repeat;
@@ -470,9 +490,84 @@ footer .info ul li:hover a i{
         z-index: 1001;
     }
     .toggleMenu.active{
-        background: url(images/close.jpg);
+        background: url(close.png);
         background-position: center;
         background-size: 30px;
         background-repeat: no-repeat;
+    }
+    .banner ,bg img{
+        position: absolute;
+    }
+    
+        .banner .bg .content{
+        width: 100%;
+        height: 100%;
+        background: rgb(27 33 65 / 50%);
+        padding: 20px;
+        z-index: 1;
+        border-radius: 10px;
+    }
+
+    .about{
+        flex-direction: column;
+    }
+    .about .contentBx{
+        width: 100%;
+
+    }
+    .contact{
+        flex-direction: column;
+    }
+    .contact img{
+        height: 100%;
+        width: 100%;
+    }
+    .contact .form{
+        width: 100%;
+        margin: 30px;
+        padding: 10px;
+    }
+    .contact .form h1{
+        text-align: center;
+    }
+    footer .info{
+        flex-direction: column;
+    }
+
+
+    #loginSignupButtons {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    #loginSignupButtons a {
+        display: none;
+        margin-top: 10px;
+        padding: 10px 20px;
+        border: 1px solid #1aeeef;
+        text-decoration: none;
+        font-weight: 700;
+        border-radius: 5px;
+        color: #fff;
+        letter-spacing: 1px;
+    }
+    
+    #loginSignupButtons a:hover {
+        background: #1aeeef;
+        border: none;
+        color: #050e2d;
+        box-shadow: 0 0 10px #1aeeef;
+    }
+    
+    #loginSignupButtons.show {
+        display: block;
     }
 }
