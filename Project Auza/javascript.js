@@ -3,12 +3,28 @@ window.addEventListener('scroll', function() {
     header.classList.toggle('sticky', window.scrollY > 0);
 });
 
-    function toggleMenu(){
-        const toggleMenu = document.querySelector('.toggleMenu');
-       const nav= document.querySelector('.nav');
-       toggleMenu.classList.toggle('active')
-       nav.classList.toggle('active')
-    }         
+function toggleMenu() {
+    const toggleMenu = document.querySelector('.toggleMenu');
+    const nav = document.querySelector('.nav');
+    toggleMenu.classList.toggle('active');
+    nav.classList.toggle('active');
+}
+
+window.addEventListener('scroll', function() {
+    var anime = document.querySelectorAll('.animeX');
+
+    for (var s = 0; s < anime.length; s++) {
+        var windowheight = window.innerHeight;
+        var animetop = anime[s].getBoundingClientRect().top;
+        var animepoint = 150;
+
+        if (animetop < windowheight - animepoint) {
+            anime[s].classList.add('active');
+        } else {
+            anime[s].classList.remove('active');
+        }
+    }
+});
 
 let list = document.querySelectorAll('.list');
 let card = document.querySelectorAll('.card');
@@ -20,7 +36,7 @@ for (let i = 0; i < list.length; i++) {
         }
         this.classList.add('active');
 
-        let dataFilter = this.getAttribute('data-filter'); // Corrected 'data-fil' to 'data-filter'
+        let dataFilter = this.getAttribute('data-filter');
 
         for (let k = 0; k < card.length; k++) {
             card[k].classList.remove('active');
@@ -34,9 +50,25 @@ for (let i = 0; i < list.length; i++) {
     });
 }
 
-function toggleMenu(){
+function toggleMenu() {
     const toggleMenu = document.querySelector('.toggleMenu');
     const nav = document.querySelector('.nav');
-    toggleMenu.classList.toggle('active')
-    nav.classList.toggle('active')
+    toggleMenu.classList.toggle('active');
+    nav.classList.toggle('active');
+}
+
+function showLoginSignup() {
+    console.log("Function called");
+    const loginSignupButtons = document.getElementById('loginSignupButtons');
+    loginSignupButtons.classList.toggle('show');
+}
+
+
+
+function showLogin() {
+    // Add logic to show login form here
+}
+
+function showSignup() {
+    // Add logic to show signup form here
 }
