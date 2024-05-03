@@ -30,14 +30,58 @@
     <div class="bg">
         <div class="content">
             <h2> A new Home for<br> Game Lovers</h2>
-            <p>Welcome to Auza, Developed By Solo Leveling</p>
-            <a href="#" class="btn" onclick="showLoginSignup()">Join Now</a>
+            <br><br><p>Welcome to Auza, Developed By Solo Leveling</p>
             <div class="login-signup-buttons" id="loginSignupButtons">
                 <a href="#" class="login-btn" onclick="showLogin()">Login</a>
                 <a href="#" class="signup-btn" onclick="showSignup()">Sign Up</a>
             </div>
+       
+        
         </div>
+        <div id="loginForm" class="form-container">
+            <h2>Login</h2>
+            <form action="/action_page.php">
+                <div class="inputBx">
+                    <p>Username</p>
+                    <input type="text" placeholder="Enter your username">
+                </div>
+                <div class="inputBx">
+                    <p>Password</p>
+                    <input type="password" placeholder="Enter your password">
+                </div>
+                <div class="inputBx">
+                    <input type="submit" value="Login">
+                </div>
+                <button type="button" class="close-btn" onclick="closeForm('loginForm')">Close</button>
+            </form>
+            </form>
+        </div>
+        
+        <div id="signupForm" class="form-container">
+            <h2>Sign Up</h2>
+            <form action="/action_page.php">
+                <div class="inputBx">
+                    <p>Username</p>
+                    <input type="text" placeholder="Choose a username">
+                </div>
+                <div class="inputBx">
+                    <p>Email</p>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+                <div class="inputBx">
+                    <p>Password</p>
+                    <input type="password" placeholder="Choose a password">
+                </div>
+                <div class="inputBx">
+                    <input type="submit" value="Sign Up">
+                </div>
+                <button type="button" class="close-btn" onclick="closeForm('signupForm')">Close</button>
+            </form>
+        </div>
+        
+    
     </div>
+    
     <img src="images/neon.png">
 </div>
 
