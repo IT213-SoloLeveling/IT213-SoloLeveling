@@ -123,6 +123,7 @@ header .actions .searchBox input {
     font-size: 4em;
     color: #fff;
     letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5), 0 0 40px rgba(255, 0, 255, 0.5), 0 0 80px rgba(255, 0, 255, 0.5), 0 0 120px rgba(255, 0, 255, 0.5), 0 0 150px rgba(255, 0, 255, 0.5);
 }
 
 .banner .bg .content p {
@@ -471,7 +472,7 @@ footer .info ul li:hover a i {
 
 .animeX {
     position: relative;
-    transform: translateY(150px);
+    transform: translateY(70px);
     opacity: 0;
     transition: all 2s ease;
 }
@@ -588,6 +589,7 @@ footer .info ul li:hover a i {
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
     }
 
     #loginSignupButtons a {
@@ -612,4 +614,85 @@ footer .info ul li:hover a i {
     #loginSignupButtons.show {
         display: block;
     }
+}
+
+
+
+
+.form-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container .inputBx {
+    margin-bottom: 15px;
+}
+
+.form-container .inputBx p {
+    margin-bottom: 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Corrected border syntax */
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+
+.form-container input[type="submit"] {
+    background-color: #1aeeef;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #059b9b;
+}
+
+
+/* Style for close button */
+.close-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+/* Style for form container */
+.form-container {
+    position: relative;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
 }

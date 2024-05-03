@@ -51,24 +51,41 @@ for (let i = 0; i < list.length; i++) {
 }
 
 function toggleMenu() {
-    const toggleMenu = document.querySelector('.toggleMenu');
-    const nav = document.querySelector('.nav');
-    toggleMenu.classList.toggle('active');
+    var nav = document.querySelector('.nav');
     nav.classList.toggle('active');
 }
 
-function showLoginSignup() {
-    console.log("Function called");
-    const loginSignupButtons = document.getElementById('loginSignupButtons');
-    loginSignupButtons.classList.toggle('show');
-}
-
-
 
 function showLogin() {
-    // Add logic to show login form here
+    const loginForm = document.getElementById('loginForm');
+    loginForm.style.display = 'block';
 }
 
 function showSignup() {
-    // Add logic to show signup form here
+    const signupForm = document.getElementById('signupForm');
+    signupForm.style.display = 'block';
 }
+function closeForm(formId) {
+    var form = document.getElementById(formId);
+    form.style.display = "none";
+}
+
+// Function to close the form when Escape key is pressed
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeAllForms();
+    }
+});
+
+// Function to close a specific form
+function closeForm(formId) {
+    var form = document.getElementById(formId);
+    form.style.display = "none";
+}
+
+// Function to close all forms
+function closeAllForms() {
+    closeForm("loginForm");
+    closeForm("signupForm");
+}
+
