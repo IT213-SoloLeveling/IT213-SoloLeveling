@@ -630,6 +630,7 @@ footer .info ul li:hover a i {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     z-index: 1001;
+    max-width: 400px; /* Adjust the max-width as needed */
 }
 
 .form-container h2 {
@@ -655,12 +656,11 @@ footer .info ul li:hover a i {
 .form-container input[type="submit"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc; /* Corrected border syntax */
+    border: 1px solid #ccc;
     border-radius: 5px;
     margin-top: 5px;
     font-size: 16px;
 }
-
 
 .form-container input[type="submit"] {
     background-color: #1aeeef;
@@ -672,8 +672,6 @@ footer .info ul li:hover a i {
     background-color: #059b9b;
 }
 
-
-/* Style for close button */
 .close-btn {
     background-color: #f44336;
     color: white;
@@ -684,16 +682,3 @@ footer .info ul li:hover a i {
     top: 5px;
     right: 10px;
 }
-
-/* Style for form container */
-.form-container {
-    position: relative;
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background-color: #fff;
-}
-
