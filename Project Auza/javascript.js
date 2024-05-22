@@ -97,14 +97,44 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             const item = this.closest('.card').getAttribute('data-item');
             const price = this.closest('.info').querySelector('span').textContent;
-            
-            // Example action: Redirect to a checkout page with item and price as query parameters
-            const url = `checkout.html?item=${encodeURIComponent(item)}&price=${encodeURIComponent(price)}`;
-            window.location.href = url;
-
-            // Example action: Display an alert
-            // alert(`Item: ${item}, Price: ${price}`);
+            const imageUrl = this.closest('.card').querySelector('img').src; // Get the image URL
+            handleBuyNow(item, price, imageUrl);
         });
     });
 });
 
+// Function to handle buy now button click
+function handleBuyNow(item, price, imageUrl) {
+    const url = `checkout.html?item=${encodeURIComponent(item)}&price=${encodeURIComponent(price)}&image=${encodeURIComponent(imageUrl)}`; // Pass the image URL as a query parameter
+    window.location.href = url;
+}
+
+
+// Function to handle buy now button click
+function handleBuyNow(item, price) {
+    const url = `checkout.html?item=${encodeURIComponent(item)}&price=${encodeURIComponent(price)}`;
+    window.location.href = url;
+}
+
+// Add event listeners to buy now buttons
+document.addEventListener('DOMContentLoaded', function() {
+    const buyNowButtons = document.querySelectorAll('.buy-now-btn');
+
+    buyNowButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            const item = this.closest('.card').querySelector('h4').textContent;
+            const price = this.closest('.card').querySelector('.info span').textContent;
+            handleBuyNow(item, price);
+        });
+    });
+});
+
+// Function to handle buy now button click
+function handleBuyNow(item, price, imageUrl) {
+    console.log("Item: ", item);
+    console.log("Price: ", price);
+    console.log("Image URL: ", imageUrl);
+    const url = `checkout.html?item=${encodeURIComponent(item)}&price=${encodeURIComponent(price)}&image=${encodeURIComponent(imageUrl)}`;
+    window.location.href = url;
+}
