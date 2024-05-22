@@ -89,3 +89,21 @@ function closeAllForms() {
     closeForm("signupForm");
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const buyNowButtons = document.querySelectorAll('.buy-now-btn');
+
+    buyNowButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            const item = this.closest('.card').getAttribute('data-item');
+            const price = this.closest('.info').querySelector('span').textContent;
+            
+            // Example action: Redirect to a checkout page with item and price as query parameters
+            const url = `checkout.html?item=${encodeURIComponent(item)}&price=${encodeURIComponent(price)}`;
+            window.location.href = url;
+
+            // Example action: Display an alert
+            // alert(`Item: ${item}, Price: ${price}`);
+        });
+    });
+});
