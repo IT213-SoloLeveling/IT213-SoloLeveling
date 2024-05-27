@@ -683,4 +683,8 @@ footer .info ul li:hover a i {
     right: 10px;
 }
 
-    
+@media screen and (max-width: 768px) {
+    .form-container {
+        max-width: 90%;
+    }
+}
