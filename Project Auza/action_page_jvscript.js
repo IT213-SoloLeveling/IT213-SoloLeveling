@@ -81,3 +81,60 @@ function logout() {
         // Redirect to index.html or any other desired page
         window.location.href = "indexl.html";
     }
+
+ 
+    // Function to update the stock of a game
+    function updateStock(gameName) {
+        // Get the input field value
+        const stockInput = document.querySelector(`#stock_${gameName.replace(/\s+/g, '').toLowerCase()}`);
+        const newStock = stockInput.value;
+        
+        // You can implement your logic here to update the stock of the game
+        console.log(`Updating stock for ${gameName} to ${newStock}`);
+    }
+
+    // Open edit modal
+function editGame() {
+    // Fetch current game data and populate form fields
+    document.getElementById('gameTitle').value = "Current Game Title";
+    document.getElementById('gamePrice').value = "Current Price";
+    document.getElementById('gameAvailability').value = "Current Availability";
+
+    // Display modal
+    document.getElementById('editModal').style.display = "block";
+}
+
+// Update game
+function updateGame() {
+    // Get updated data from form fields
+    var updatedTitle = document.getElementById('gameTitle').value;
+    var updatedPrice = document.getElementById('gamePrice').value;
+    var updatedAvailability = document.getElementById('gameAvailability').value;
+
+    // Update displayed game listings
+    // This will be a placeholder for updating game listings on the frontend
+    console.log("Game Updated:", updatedTitle, updatedPrice, updatedAvailability);
+
+    // Close modal
+    closeModal();
+}
+
+// Close modal
+function closeModal() {
+    document.getElementById('editModal').style.display = "none";
+}
+
+// Remove game
+function openRemoveGameModal(gameTitle) {
+    var modal = document.getElementById("removeGameModal");
+    var gameTitleSpan = document.getElementById("gameTitle");
+    gameTitleSpan.innerText = gameTitle;
+    modal.style.display = "block";
+}
+
+function closeRemoveGameModal() {
+    var modal = document.getElementById("removeGameModal");
+    modal.style.display = "none";
+}
+
+

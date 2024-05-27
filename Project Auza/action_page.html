@@ -15,6 +15,13 @@
         <li><a href="#about">About</a></li>
         <li><a href="#games">Games</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Manage Game Listings</a>
+            <div class="dropdown-content">
+                <a href="#"  onclick="editGame()">Edit Game</a>
+                <a href="#" onclick="openRemoveGameModal('Game Title')">Remove Game</a>
+            </div>
+        </li>
         <li><a href="#" onclick="logout()">Logout</a></li>
     </ul>
     <div class="actions">
@@ -25,6 +32,43 @@
     </div>
     <div class="toggleMenu"onclick="toggleMenu();"></div>
 </header>
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Edit Game</h2>
+            <form id="editForm">
+                <div class="inputBx">
+                    <label for="gameTitle">Title:</label>
+                    <input type="text" id="gameTitle">
+                </div>
+                <div class="inputBx">
+                    <label for="gamePrice">Price:</label>
+                    <input type="text" id="gamePrice">
+                </div>
+                <div class="inputBx">
+                    <label for="gameAvailability">Availability:</label>
+                    <input type="text" id="gameAvailability">
+                </div>
+                <button type="submit" onclick="updateGame()">Update</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="removeGameModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRemoveGameModal()">&times;</span>
+            <h2>Remove Game</h2>
+            <form id="removeForm">
+                <div class="inputBx">
+                    <label for="gameTitle">Title:</label>
+                    <input type="text" id="gameTitle">
+ <!-- Use readonly attribute to prevent user input -->
+                </div>
+                <button type="submit" onclick="removeGame()">Remove</button>
+            </form>
+        </div>
+    </div>
+
 
 <div class="banner animeX" id="home">
     <div class="bg">
