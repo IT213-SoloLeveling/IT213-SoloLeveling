@@ -10,6 +10,22 @@ function toggleMenu() {
     nav.classList.toggle('active');
 }
 
+window.addEventListener('scroll', function() {
+    var anime = document.querySelectorAll('.animeX');
+
+    for (var s = 0; s < anime.length; s++) {
+        var windowheight = window.innerHeight;
+        var animetop = anime[s].getBoundingClientRect().top;
+        var animepoint = 150;
+
+        if (animetop < windowheight - animepoint) {
+            anime[s].classList.add('active');
+        } else {
+            anime[s].classList.remove('active');
+        }
+    }
+});
+
 let list = document.querySelectorAll('.list');
 let card = document.querySelectorAll('.card');
 
@@ -34,35 +50,17 @@ for (let i = 0; i < list.length; i++) {
     });
 }
 
-function showLogin() {
-    const loginForm = document.getElementById('loginForm');
-    loginForm.style.display = 'block';
+function toggleMenu() {
+    var nav = document.querySelector('.nav');
+    nav.classList.toggle('active');
 }
 
-function showSignup() {
-    const signupForm = document.getElementById('signupForm');
-    signupForm.style.display = 'block';
-}
-
-function closeForm(formId) {
-    var form = document.getElementById(formId);
-    form.style.display = "none";
-}
-
-document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") {
-        closeAllForms();
-    }
-});
-
-function closeForm(formId) {
-    var form = document.getElementById(formId);
-    form.style.display = "none";
-}
-
-function closeAllForms() {
-    closeForm("loginForm");
-    closeForm("signupForm");
+// Function to handle buy now button click
+function handleBuyNow(item, price) {
+    console.log("Item: ", item);
+    console.log("Price: ", price);
+    const url = `checkout.html?item=${encodeURIComponent(item)}&price=${encodeURIComponent(price)}`;
+    window.location.href = url;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -78,7 +76,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function handleBuyNow(item, price) {
-    const url = `checkout.html?item=${encodeURIComponent(item)}&price=${encodeURIComponent(price)}`;
-    window.location.href = url;
-}
+function logout() {
+        // Perform logout action
+        // Redirect to index.html or any other desired page
+        window.location.href = "indexl.html";
+    }
