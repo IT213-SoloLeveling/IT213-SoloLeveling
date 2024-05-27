@@ -688,3 +688,161 @@ footer .info ul li:hover a i {
         max-width: 90%;
     }
 }
+
+/* Styles for the modal */
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001; /* Ensure modal is above other content */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
+    overflow: auto;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  /* Modal Content */
+  /* Modal Content */
+.modal-content {
+    background-color: #1b2141;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #1aeeef;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    color: #fff;
+    z-index: 1002; /* Ensure modal content is above the overlay */
+  }
+  
+  
+  /* Close Button */
+  .close-btn {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-btn:hover,
+  .close-btn:focus {
+    color: #1aeeef;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Form Styling */
+  .modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .modal-content form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-content .inputBx {
+    margin-bottom: 15px;
+  }
+  
+  .modal-content .inputBx p {
+    margin-bottom: 5px;
+  }
+  
+  .modal-content input[type="text"],
+  .modal-content input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 16px;
+  }
+  
+  .modal-content input[type="submit"] {
+    background-color: #1aeeef;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .modal-content input[type="submit"]:hover {
+    background-color: #059b9b;
+  }
+  
+  button[type="submit"] {
+    background-color: #1aeeef;
+    color: #fff;
+    cursor: pointer;
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Adjust padding */
+    border-radius: 5px; /* Add border radius */
+}
+
+button[type="submit"]:hover {
+    background-color: #059b9b;
+    box-shadow: 0 0 10px #1aeeef; /* Add box shadow on hover */
+}
+
+/* Modal Content for Remove Game */
+#removeGameModal .modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #removeGameModal .modal-content form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #removeGameModal .modal-content .inputBx {
+    margin-bottom: 15px;
+  }
+  
+  #removeGameModal .modal-content .inputBx p {
+    margin-bottom: 5px;
+  }
+  
+  #removeGameModal .modal-content input[type="text"],
+  #removeGameModal .modal-content input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 16px;
+  }
+  
+  #removeGameModal .modal-content input[type="submit"] {
+    background-color: #1aeeef;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #removeGameModal .modal-content input[type="submit"]:hover {
+    background-color: #059b9b;
+  }
+  
+  #removeGameModal button[type="submit"] {
+    background-color: #1aeeef;
+    color: #fff;
+    cursor: pointer;
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Adjust padding */
+    border-radius: 5px; /* Add border radius */
+  }
+  
+  #removeGameModal button[type="submit"]:hover {
+    background-color: #059b9b;
+    box-shadow: 0 0 10px #1aeeef; /* Add box shadow on hover */
+  }
+  
+  /*drop down*/
+  
