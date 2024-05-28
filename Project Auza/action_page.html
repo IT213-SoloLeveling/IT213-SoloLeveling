@@ -18,9 +18,17 @@
         <li class="dropdown">
             <a href="#" class="dropbtn">Manage Game Listings</a>
             <div class="dropdown-content">
-                <a href="#"  onclick="editGame()">Edit Game</a>
+                <a href="#" onclick="openEditGameModal()">Edit Game</a>
                 <a href="#" onclick="openRemoveGameModal('Game Title')">Remove Game</a>
             </div>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Settings</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="openPersonalInfoModal()">Personal Information</a>
+                    <a href="#" onclick="openChangePasswordModal()">Change Password</a>
+                    <a href="#" onclick="openOrderHistoryModal()">Order History</a>
+                </div>
+            </li>
         </li>
         <li><a href="#" onclick="logout()">Logout</a></li>
     </ul>
@@ -32,7 +40,66 @@
     </div>
     <div class="toggleMenu"onclick="toggleMenu();"></div>
 </header>
-    <div id="editModal" class="modal">
+<div id="personalInfoModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('personalInfoModal')">&times;</span>
+        <h2>Personal Information</h2>
+        <form>
+            <div class="inputBx">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" placeholder="Full Name">
+            </div>
+            <div class="inputBx">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Email">
+            </div>
+            <div class="inputBx">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" placeholder="Phone">
+            </div>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</div>
+
+<div id="changePasswordModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('changePasswordModal')">&times;</span>
+        <h2>Change Password</h2>
+        <form>
+            <div class="inputBx">
+                <label for="currentPassword">Current Password:</label>
+                <input type="password" id="currentPassword" placeholder="Current Password">
+            </div>
+            <div class="inputBx">
+                <label for="newPassword">New Password:</label>
+                <input type="password" id="newPassword" placeholder="New Password">
+            </div>
+            <div class="inputBx">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password">
+            </div>
+            <button type="submit">Change Password</button>
+        </form>
+    </div>
+</div>
+
+<div id="orderHistoryModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('orderHistoryModal')">&times;</span>
+        <h2>Order History</h2>
+        <ul>
+            <li>Order #1 - Game Title - Date</li>
+            <li>Order #2 - Game Title - Date</li>
+            <!-- Add more orders as necessary -->
+        </ul>
+    </div>
+</div>
+
+
+
+
+<div id="editModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <h2>Edit Game</h2>

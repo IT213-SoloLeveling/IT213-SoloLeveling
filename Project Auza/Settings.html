@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Dropdown and Modals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <nav class="nav">
+            <ul>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Settings</a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="openModal('personalInfoModal')">Personal Information</a>
+                        <a href="#" onclick="openModal('changePasswordModal')">Change Password</a>
+                        <a href="#" onclick="openModal('orderHistoryModal')">Order History</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="personalInfoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('personalInfoModal')">&times;</span>
+            <h2>Personal Information</h2>
+            <form>
+                <div class="inputBx">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" placeholder="Full Name">
+                </div>
+                <div class="inputBx">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+                <div class="inputBx">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" placeholder="Phone">
+                </div>
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="changePasswordModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('changePasswordModal')">&times;</span>
+            <h2>Change Password</h2>
+            <form>
+                <div class="inputBx">
+                    <label for="currentPassword">Current Password:</label>
+                    <input type="password" id="currentPassword" placeholder="Current Password">
+                </div>
+                <div class="inputBx">
+                    <label for="newPassword">New Password:</label>
+                    <input type="password" id="newPassword" placeholder="New Password">
+                </div>
+                <div class="inputBx">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password">
+                </div>
+                <button type="submit">Change Password</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="orderHistoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('orderHistoryModal')">&times;</span>
+            <h2>Order History</h2>
+            <ul>
+                <li>Order #1 - Game Title - Date</li>
+                <li>Order #2 - Game Title - Date</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    </script>
+</body>
+</html>
