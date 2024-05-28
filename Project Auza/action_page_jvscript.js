@@ -94,7 +94,8 @@ function logout() {
     }
 
     // Open edit modal
-function editGame() {
+// Open edit game modal
+function openEditGameModal() {
     // Fetch current game data and populate form fields
     document.getElementById('gameTitle').value = "Current Game Title";
     document.getElementById('gamePrice').value = "Current Price";
@@ -103,6 +104,13 @@ function editGame() {
     // Display modal
     document.getElementById('editModal').style.display = "block";
 }
+
+// Close edit game modal
+function closeEditGameModal() {
+    // Close modal
+    document.getElementById('editModal').style.display = "none";
+}
+
 
 // Update game
 function updateGame() {
@@ -116,11 +124,12 @@ function updateGame() {
     console.log("Game Updated:", updatedTitle, updatedPrice, updatedAvailability);
 
     // Close modal
-    closeModal();
+    closeEditGameModal(); // Renamed the function here
 }
 
-// Close modal
-function closeModal() {
+// Close edit game modal
+function closeEditGameModal() {
+    // Close modal
     document.getElementById('editModal').style.display = "none";
 }
 
@@ -137,4 +146,21 @@ function closeRemoveGameModal() {
     modal.style.display = "none";
 }
 
+function openPersonalInfoModal() {
+    document.getElementById('personalInfoModal').style.display = 'block';
+}
 
+// Function to open Change Password Modal
+function openChangePasswordModal() {
+    document.getElementById('changePasswordModal').style.display = 'block';
+}
+
+// Function to open Order History Modal
+function openOrderHistoryModal() {
+    document.getElementById('orderHistoryModal').style.display = 'block';
+}
+
+// Function to close modals
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+}
