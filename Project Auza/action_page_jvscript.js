@@ -164,3 +164,50 @@ function openOrderHistoryModal() {
 function closeModal(modalId) {
     document.getElementById(modalId).style.display = 'none';
 }
+
+function storeFormData(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Retrieve existing entries from local storage
+    let contactEntries = JSON.parse(localStorage.getItem('contactEntries')) || [];
+
+    // Add new entry
+    const newEntry = { name, email, message };
+    contactEntries.push(newEntry);
+
+    // Save updated entries back to local storage
+    localStorage.setItem('contactEntries', JSON.stringify(contactEntries));
+
+    // Display success message
+    document.getElementById('successMessage').style.display = 'block';
+
+    // Clear the form fields
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('message').value = '';
+}
+
+// Load form data from local storage
+function loadFormData() {
+    // Retrieve entries from local storage
+    const contactEntries = JSON.parse(localStorage.getItem('contactEntries')) || [];
+
+    // Display last entry if available
+    if (contactEntries.length > 0) {
+        const lastEntry = contactEntries[contactEntries.length - 1];
+        document.getElementById('name').value = lastEntry.name;
+        document.getElementById('email').value = lastEntry.email;
+        document.getElementById('message').value = lastEntry.message;
+    }
+}
+
+// Load form data when the page loads
+window.onload = loadFormData;
+
+
+
+
