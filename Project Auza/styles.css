@@ -414,6 +414,12 @@ header .actions .searchBox input {
     box-shadow: 0 0 10px #1aeeef;
 }
 
+.success-message {
+    color: #1aeeef;
+    font-weight: bold;
+    margin-top: 15px;
+    display: none; /* Initially hidden */
+}
 footer {
     padding: 10px 100px;
 }

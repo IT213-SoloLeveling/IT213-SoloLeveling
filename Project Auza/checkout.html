@@ -78,28 +78,13 @@
                 padding: 10px;
             }
         }
-   
-        img {
-            max-width: 100%;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
 
-        @media (max-width: 768px) {
-            #checkout-details {
-                padding: 10px;
-            }
-        }
-   
-   
-   
    </style>
 </head>
 <body>
     <h1>Checkout</h1>
     <div id="checkout-details">
         <h2>Order Summary</h2>
-        <div id="item-image"></div>
         <!-- JavaScript will populate this section -->
         <p id="item"></p>
         <p id="price"></p>
@@ -132,31 +117,14 @@
             </select>
 
             <hr>
-            <h2>Billing Information</h2>
-            <label for="billing-address">Billing Address:</label>
-            <input type="text" id="billing-address" name="billing-address" required>
-
-            <label for="billing-city">Billing City:</label>
-            <input type="text" id="billing-city" name="billing-city" required>
-
-            <label for="billing-country">Billing Country:</label>
-            <select id="billing-country" name="billing-country" required>
-                <option value="">Select Country</option>
-                <option value="USA">United States</option>
-                <option value="UK">United Kingdom</option>
-                <option value="CA">Canada</option>
-                <option value="PH">Philippines</option>
+            <h2>Payment Method</h2>
+            <label for="payment-method">Select Payment Method:</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="">Select Payment Method</option>
+                <option value="gcash">GCash</option>
+                <option value="paymaya">PayMaya</option>
                 <!-- Add more options as needed -->
             </select>
-
-            <label for="card">Credit Card Number:</label>
-            <input type="text" id="card" name="card" required>
-
-            <label for="expiry">Expiration Date:</label>
-            <input type="text" id="expiry" name="expiry" placeholder="MM/YYYY" required>
-
-            <label for="cvv">CVV:</label>
-            <input type="text" id="cvv" name="cvv" required>
 
             <input type="submit" value="Complete Purchase">
         </form>
@@ -168,29 +136,57 @@
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(name);
         }
-
-        // Get item and price from query parameters
+    
+        // Get item, price, and imageUrl from query parameters
         const item = getQueryParameter('item');
         const price = getQueryParameter('price');
-        const imageUrl = getQueryParameter('image');
-
-
-        // Display item and price in the order summary
-        document.getElementById('item-image').innerHTML = `<img src="${imageUrl}" alt="Item Image">`;
+    
+        // Display item, price, and imageUrl in the order summary
         document.getElementById('item').textContent = `Item: ${item}`;
         document.getElementById('price').textContent = `Price: ${price}`;
-
-        // Additional JavaScript code can be added here if needed
     
-     if (imageUrl) {
-            document.getElementById('item-image').innerHTML = `<img src="${imageUrl}" alt="Item Image">`;
-        } else {
-            document.getElementById('item-image').innerHTML = `<img src="default.jpg" alt="Default Image">`;
+        // Store form data in local storage when form is submitted
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+    
+            // Get form data
+            const formData = {
+                item: item,
+                price: price,
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                country: document.getElementById('country').value,
+                paymentMethod: document.getElementById('payment-method').value
+            };
+    
+            // Store form data in local storage
+            localStorage.setItem('checkoutFormData', JSON.stringify(formData));
+    
+            // Display success message
+            const successMessage = document.createElement('p');
+            successMessage.textContent = 'Ordered Successfully';
+            document.getElementById('checkout-details').appendChild(successMessage);
+    
+            // Redirect to confirmation page or perform other actions
+            // window.location.href = 'confirmation.html'; // Change the URL as needed
+        });
+    
+        // Retrieve stored form data and populate form fields if available
+        const storedFormData = localStorage.getItem('checkoutFormData');
+        if (storedFormData) {
+            const formData = JSON.parse(storedFormData);
+            document.getElementById('name').value = formData.name;
+            document.getElementById('email').value = formData.email;
+            document.getElementById('phone').value = formData.phone;
+            document.getElementById('address').value = formData.address;
+            document.getElementById('city').value = formData.city;
+            document.getElementById('country').value = formData.country;
+            document.getElementById('payment-method').value = formData.paymentMethod;
         }
-    
-    
-    
-    
     </script>
 
 </body>

@@ -96,63 +96,58 @@
     </div>
 </div>
 
-
-
-
 <div id="editModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Edit Game</h2>
-            <form id="editForm">
-                <div class="inputBx">
-                    <label for="gameTitle">Title:</label>
-                    <input type="text" id="gameTitle">
-                </div>
-                <div class="inputBx">
-                    <label for="gamePrice">Price:</label>
-                    <input type="text" id="gamePrice">
-                </div>
-                <div class="inputBx">
-                    <label for="gameAvailability">Availability:</label>
-                    <input type="text" id="gameAvailability">
-                </div>
-                <button type="submit" onclick="updateGame()">Update</button>
-            </form>
-        </div>
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Edit Game</h2>
+        <form id="editForm">
+            <div class="inputBx">
+                <label for="gameTitle">Title:</label>
+                <input type="text" id="gameTitle">
+            </div>
+            <div class="inputBx">
+                <label for="gamePrice">Price:</label>
+                <input type="text" id="gamePrice">
+            </div>
+            <div class="inputBx">
+                <label for="gameAvailability">Availability:</label>
+                <input type="text" id="gameAvailability">
+            </div>
+            <button type="submit" onclick="updateGame()">Update</button>
+        </form>
     </div>
+</div>
 
-    <div id="removeGameModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeRemoveGameModal()">&times;</span>
-            <h2>Remove Game</h2>
-            <form id="removeForm">
-                <div class="inputBx">
-                    <label for="gameTitle">Title:</label>
-                    <input type="text" id="gameTitle">
- <!-- Use readonly attribute to prevent user input -->
-                </div>
-                <button type="submit" onclick="removeGame()">Remove</button>
-            </form>
-        </div>
+<div id="removeGameModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeRemoveGameModal()">&times;</span>
+        <h2>Remove Game</h2>
+        <form id="removeForm">
+            <div class="inputBx">
+                <label for="gameTitle">Title:</label>
+                <input type="text" id="gameTitle">
+            </div>
+            <button type="submit" onclick="removeGame()">Remove</button>
+        </form>
     </div>
+</div>
 
-
-<div class="banner animeX" id="home">
+<div class="banner" id="home">
     <div class="bg">
         <div class="content">
-            <h2> Hub for Gamers Worldwide</h2>
+            <h2>Hub for Gamers Worldwide</h2>
             <br><br><p>Welcome to Auza, Developed By Solo Leveling</p>
         </div>
     </div>
     <img src="images/neon.png">
 </div>
-<div class="about animeX" id="about">
+<div class="about" id="about">
     <div class="contentBx">
         <h2>About us</h2>
         <p>In today's digital age, students are embracing entrepreneurship by developing apps for income. Despite challenges like technical hurdles and limited resources, they persevere, driven by passion and ambition. Through this journey, they acquire technical skills, problem-solving abilities, and a resilient entrepreneurial mindset. This experience not only yields financial rewards but also fosters personal growth and empowers students to make a positive impact. As they navigate the app development landscape, students emerge as innovative entrepreneurs ready to tackle future challenges and opportunities in the tech industry.</p>
         <a href="#">Read more</a>
-     </div>
-     <img src="images/Exploring-the-World-of-Gaming-A-Comprehensive-Review-of-NFTs-Cryptocurrencies-Web3-Play-to-Earn-and-the-Metaverse-removebg-preview.png">   
+    </div>
+    <img src="images/Exploring-the-World-of-Gaming-A-Comprehensive-Review-of-NFTs-Cryptocurrencies-Web3-Play-to-Earn-and-the-Metaverse-removebg-preview.png">   
 </div>
 
 <div class="games animeX" id="games">
@@ -171,6 +166,7 @@
                 <div class="info">
                     <p>Pricing<br><span>P500</span></p>
                     <a href="#"class="buy-now-btn">Buy now</a>
+                    
             </div>
             </div>
             </div>
@@ -412,24 +408,27 @@
          
      
 <div class="contact animeX" id="contact">
-    <img src="images/Contact.jpg">
+    <img src="images/Contact.jpg" alt="Contact">
     <div class="form">
         <h1>Contact Us</h1>
         <div class="inputBx">
             <p>Enter Name</p>
-            <input type="text" placeholder="Full Name">
+            <input type="text" id="name" placeholder="Full Name">
         </div>
         <div class="inputBx">
             <p>Enter Email</p>
-            <input type="text" placeholder="Email">
+            <input type="text" id="email" placeholder="Email">
         </div>
         <div class="inputBx">
             <p>Message</p>
-            <textarea placeholder="Type your message here..."></textarea>
+            <textarea id="message" placeholder="Type your message here..."></textarea>
         </div>
         <div class="inputBx">
-            <input type="submit" value="Submit">
-        </div>      
+            <input type="submit" value="Submit" onclick="storeFormData(event)">
+        </div>
+        <div class="success-message" id="successMessage">
+            Message sent successfully!
+        </div>     
     </div>
 </div>
 
