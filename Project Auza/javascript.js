@@ -82,3 +82,24 @@ function handleBuyNow(item, price) {
     const url = `checkout.html?item=${encodeURIComponent(item)}&price=${encodeURIComponent(price)}`;
     window.location.href = url;
 }
+
+function handleFormSubmit(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Show the success message
+        const successMessage = document.getElementById('successMessage');
+        successMessage.style.display = 'block';
+
+        // Clear the form inputs
+        const form = document.getElementById('signupFormElement');
+        form.reset();
+
+        // Hide the success message after 3 seconds
+        setTimeout(function() {
+            successMessage.style.display = 'none';
+        }, 3000);
+    }
+
+    function closeForm(formId) {
+        document.getElementById(formId).style.display = 'none'; // Hide the form container
+    }

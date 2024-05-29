@@ -208,6 +208,21 @@ function loadFormData() {
 // Load form data when the page loads
 window.onload = loadFormData;
 
+function searchGames() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    console.log('Search Input:', input); // Debugging line
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        const title = card.querySelector('h4').textContent.toLowerCase();
+        console.log('Card Title:', title); // Debugging line
+        if (title.includes(input)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
 
 
 
