@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add any specific styles for the checkout page here */
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #checkout-details {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(27, 33, 65, 0.8);
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        #checkout-details p {
+            margin-bottom: 10px;
+        }
+
+        #checkout-details p:last-child {
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #1b2141;
+            color: #fff;
+        }
+
+        input[type="submit"] {
+            background-color: #1aeeef;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #059b9b;
+        }
+
+        @media (max-width: 768px) {
+            #checkout-details {
+                padding: 10px;
+            }
+        }
+
+   </style>
+</head>
+<body>
+    <h1>Checkout</h1>
+    <div id="checkout-details">
+        <h2>Order Summary</h2>
+        <!-- JavaScript will populate this section -->
+        <p id="item"></p>
+        <p id="price"></p>
+        <hr>
+        <h2>Shipping Information</h2>
+        <form action="#">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address">Shipping Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="">Select Country</option>
+                <option value="USA">United States</option>
+                <option value="UK">United Kingdom</option>
+                <option value="CA">Canada</option>
+                <option value="PH">Philippines</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <hr>
+            <h2>Payment Method</h2>
+            <label for="payment-method">Select Payment Method:</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="">Select Payment Method</option>
+                <option value="gcash">GCash</option>
+                <option value="paymaya">PayMaya</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <input type="submit" value="Complete Purchase">
+        </form>
+    </div>
+
+    <script>
+        // Function to parse query parameters from URL
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+    
+        // Get item, price, and imageUrl from query parameters
+        const item = getQueryParameter('item');
+        const price = getQueryParameter('price');
+    
+        // Display item, price, and imageUrl in the order summary
+        document.getElementById('item').textContent = `Item: ${item}`;
+        document.getElementById('price').textContent = `Price: ${price}`;
+    
+        // Store form data in local storage when form is submitted
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+    
+            // Get form data
+            const formData = {
+                item: item,
+                price: price,
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                country: document.getElementById('country').value,
+                paymentMethod: document.getElementById('payment-method').value
+            };
+    
+            // Store form data in local storage
+            localStorage.setItem('checkoutFormData', JSON.stringify(formData));
+    
+            // Display success message
+            const successMessage = document.createElement('p');
+            successMessage.textContent = 'Ordered Successfully';
+            document.getElementById('checkout-details').appendChild(successMessage);
+    
+            // Redirect to confirmation page or perform other actions
+            // window.location.href = 'confirmation.html'; // Change the URL as needed
+        });
+    
+        // Retrieve stored form data and populate form fields if available
+        const storedFormData = localStorage.getItem('checkoutFormData');
+        if (storedFormData) {
+            const formData = JSON.parse(storedFormData);
+            document.getElementById('name').value = formData.name;
+            document.getElementById('email').value = formData.email;
+            document.getElementById('phone').value = formData.phone;
+            document.getElementById('address').value = formData.address;
+            document.getElementById('city').value = formData.city;
+            document.getElementById('country').value = formData.country;
+            document.getElementById('payment-method').value = formData.paymentMethod;
+        }
+    </script>
+
+</body>
+</html>

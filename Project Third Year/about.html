@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #ece0e0;
+            overflow-x: hidden;
+            min-width: 115vw;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 7px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: transparent;
+            transition: 0.5s;
+            z-index: 1000;
+        }
+
+        header.sticky {
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            color: #fff;
+            text-decoration: none;
+            font-size: 4em;
+            font-weight: 700;
+        }
+
+        header .nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header ul li {
+            list-style: none;
+            margin: 10px;
+        }
+
+        header ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        header ul li a:hover {
+            background: #1aeeef;
+            color: #050e2d;
+            box-shadow: 0 0 10px #1aeeef;
+        }
+
+        .about-section {
+            padding: 120px 100px;
+            background: #fff;
+            color: #050e2d;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .about-section .team {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .about-section .team .member {
+            width: 30%;
+            margin-bottom: 40px;
+        }
+
+        .about-section .team .member img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .about-section .team .member h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .about-section .team .member p {
+            font-size: 1em;
+            color: #333;
+        }
+
+        footer {
+            background: rgba(174, 175, 179, 0.8);
+            padding: 5px 100px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #dbd9d9;
+        }
+
+        footer .info .logo {
+            font-size: 2em;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        footer .info p {
+            color: #dbd9d9;
+        }
+
+        footer .info ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer .info ul li {
+            list-style: none;
+            height: 50px;
+            width: 50px;
+            margin: 5px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #1aeeef;
+        }
+
+        footer .info ul li:hover {
+            background: #1aeeef;
+            border: none;
+            box-shadow: 0 0 10px #1aeeef;
+        }
+
+        footer .info ul li a i {
+            font-size: 1.5em;
+            color: #fff;
+        }
+
+        footer .info ul li:hover a i {
+            color: #050e2d;
+        }
+
+        @media (max-width: 991px) {
+            header {
+                padding: 15px 40px;
+            }
+
+            .about-section {
+                padding: 50px;
+            }
+
+            .about-section .team .member {
+                width: 100%;
+            }
+
+            footer {
+                padding: 15px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">YourLogo</a>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <h2>About Us</h2>
+        <p>Our company is committed to delivering exceptional products and services. With a focus on innovation and customer satisfaction, we strive to exceed expectations in every project we undertake. Our team is passionate about what we do and is dedicated to helping our clients succeed.</p>
+
+        <div class="team">
+            <div class="member">
+                <img src="team-member-1.jpg" alt="Team Member 1">
+                <h3>John Doe</h3>
+                <p>CEO & Founder</p>
+            </div>
+            <div class="member">
+                <img src="team-member-2.jpg" alt="Team Member 2">
+                <h3>Jane Smith</h3>
+                <p>Chief Operating Officer</p>
+            </div>
+            <div class="member">
+                <img src="team-member-3.jpg" alt="Team Member 3">
+                <h3>Mike Johnson</h3>
+                <p>Chief Technology Officer</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="info">
+            <a href="#" class="logo">YourLogo</a>
+            <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
