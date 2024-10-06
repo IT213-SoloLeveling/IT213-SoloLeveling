@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #4f5c5b;
+    transition: 0.5s;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-img {
+    width: 150px;
+    height: auto;
+    margin-right: 8px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+header.sticky {
+    background: #000000;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+header .nav {
+    display: flex;
+    justify-content: center;
+    flex: 1; /* Makes the nav take up available space */
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    margin: 0; /* Center the navigation menu */
+    padding-left: 0;
+}
+
+header ul li {
+    list-style: none;
+    margin: 0 15px;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+header ul li a:hover {
+    background: #1aeeef;
+    color: #050e2d;
+    box-shadow: 0 0 10px #1aeeef;
+}
+
+header .actions {
+    display: flex;
+    align-items: center;
+}
+
+header .actions .searchBox {
+    display: flex;
+    background: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 20px;
+}
+
+header .actions .searchBox i {
+    font-size: 1.4em;
+    margin-right: 5px;
+    color: #222;
+}
+
+header .actions .searchBox input {
+    width: 200px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    font-size: 1em;
+    color: #222;
+}
