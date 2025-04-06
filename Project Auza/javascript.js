@@ -84,22 +84,22 @@ function handleBuyNow(item, price) {
 }
 
 function handleFormSubmit(event) {
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault(); 
 
-        // Show the success message
+        
         const successMessage = document.getElementById('successMessage');
         successMessage.style.display = 'block';
 
-        // Clear the form inputs
+        
         const form = document.getElementById('signupFormElement');
         form.reset();
 
-        // Hide the success message after 3 seconds
+        
         setTimeout(function() {
             successMessage.style.display = 'none';
         }, 3000);
     }
 
     function closeForm(formId) {
-        document.getElementById(formId).style.display = 'none'; // Hide the form container
+        document.getElementById(formId).style.display = 'none'; 
     }
