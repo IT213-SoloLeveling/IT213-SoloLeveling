@@ -6,7 +6,7 @@
     <title>Checkout</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Add any specific styles for the checkout page here */
+        
         body {
             background: #000;
             color: #fff;
@@ -85,7 +85,7 @@
     <h1>Checkout</h1>
     <div id="checkout-details">
         <h2>Order Summary</h2>
-        <!-- JavaScript will populate this section -->
+        
         <p id="item"></p>
         <p id="price"></p>
         <hr>
@@ -113,7 +113,7 @@
                 <option value="UK">United Kingdom</option>
                 <option value="CA">Canada</option>
                 <option value="PH">Philippines</option>
-                <!-- Add more options as needed -->
+              
             </select>
 
             <hr>
@@ -123,7 +123,7 @@
                 <option value="">Select Payment Method</option>
                 <option value="gcash">GCash</option>
                 <option value="paymaya">PayMaya</option>
-                <!-- Add more options as needed -->
+               
             </select>
 
             <input type="submit" value="Complete Purchase">
@@ -131,26 +131,26 @@
     </div>
 
     <script>
-        // Function to parse query parameters from URL
+        
         function getQueryParameter(name) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(name);
         }
     
-        // Get item, price, and imageUrl from query parameters
+        
         const item = getQueryParameter('item');
         const price = getQueryParameter('price');
     
-        // Display item, price, and imageUrl in the order summary
+        
         document.getElementById('item').textContent = `Item: ${item}`;
         document.getElementById('price').textContent = `Price: ${price}`;
     
-        // Store form data in local storage when form is submitted
+        
         const form = document.querySelector('form');
         form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault(); 
     
-            // Get form data
+            
             const formData = {
                 item: item,
                 price: price,
@@ -163,19 +163,17 @@
                 paymentMethod: document.getElementById('payment-method').value
             };
     
-            // Store form data in local storage
+            
             localStorage.setItem('checkoutFormData', JSON.stringify(formData));
     
-            // Display success message
+            
             const successMessage = document.createElement('p');
             successMessage.textContent = 'Ordered Successfully';
             document.getElementById('checkout-details').appendChild(successMessage);
     
-            // Redirect to confirmation page or perform other actions
-            // window.location.href = 'confirmation.html'; // Change the URL as needed
         });
     
-        // Retrieve stored form data and populate form fields if available
+        
         const storedFormData = localStorage.getItem('checkoutFormData');
         if (storedFormData) {
             const formData = JSON.parse(storedFormData);
