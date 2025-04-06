@@ -55,7 +55,7 @@ function toggleMenu() {
     nav.classList.toggle('active');
 }
 
-// Function to handle buy now button click
+
 function handleBuyNow(item, price) {
     console.log("Item: ", item);
     console.log("Price: ", price);
@@ -77,63 +77,60 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function logout() {
-        // Perform logout action
-        // Redirect to index.html or any other desired page
+       
         window.location.href = "indexl.html";
     }
 
  
-    // Function to update the stock of a game
+    
     function updateStock(gameName) {
-        // Get the input field value
+        
         const stockInput = document.querySelector(`#stock_${gameName.replace(/\s+/g, '').toLowerCase()}`);
         const newStock = stockInput.value;
         
-        // You can implement your logic here to update the stock of the game
+        
         console.log(`Updating stock for ${gameName} to ${newStock}`);
     }
 
-    // Open edit modal
-// Open edit game modal
+    
 function openEditGameModal() {
-    // Fetch current game data and populate form fields
+   
     document.getElementById('gameTitle').value = "Current Game Title";
     document.getElementById('gamePrice').value = "Current Price";
     document.getElementById('gameAvailability').value = "Current Availability";
 
-    // Display modal
+    
     document.getElementById('editModal').style.display = "block";
 }
 
-// Close edit game modal
+
 function closeEditGameModal() {
-    // Close modal
+    
     document.getElementById('editModal').style.display = "none";
 }
 
 
-// Update game
+
 function updateGame() {
-    // Get updated data from form fields
+    
     var updatedTitle = document.getElementById('gameTitle').value;
     var updatedPrice = document.getElementById('gamePrice').value;
     var updatedAvailability = document.getElementById('gameAvailability').value;
 
-    // Update displayed game listings
-    // This will be a placeholder for updating game listings on the frontend
+    
     console.log("Game Updated:", updatedTitle, updatedPrice, updatedAvailability);
 
-    // Close modal
-    closeEditGameModal(); // Renamed the function here
+    
+    closeEditGameModal(); 
 }
 
-// Close edit game modal
+
 function closeEditGameModal() {
     // Close modal
     document.getElementById('editModal').style.display = "none";
 }
 
-// Remove game
+
 function openRemoveGameModal(gameTitle) {
     var modal = document.getElementById("removeGameModal");
     var gameTitleSpan = document.getElementById("gameTitle");
@@ -150,53 +147,53 @@ function openPersonalInfoModal() {
     document.getElementById('personalInfoModal').style.display = 'block';
 }
 
-// Function to open Change Password Modal
+
 function openChangePasswordModal() {
     document.getElementById('changePasswordModal').style.display = 'block';
 }
 
-// Function to open Order History Modal
+
 function openOrderHistoryModal() {
     document.getElementById('orderHistoryModal').style.display = 'block';
 }
 
-// Function to close modals
+
 function closeModal(modalId) {
     document.getElementById(modalId).style.display = 'none';
 }
 
 function storeFormData(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault(); 
 
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
 
-    // Retrieve existing entries from local storage
+    
     let contactEntries = JSON.parse(localStorage.getItem('contactEntries')) || [];
 
-    // Add new entry
+    
     const newEntry = { name, email, message };
     contactEntries.push(newEntry);
 
-    // Save updated entries back to local storage
+    
     localStorage.setItem('contactEntries', JSON.stringify(contactEntries));
 
-    // Display success message
+    
     document.getElementById('successMessage').style.display = 'block';
 
-    // Clear the form fields
+    
     document.getElementById('name').value = '';
     document.getElementById('email').value = '';
     document.getElementById('message').value = '';
 }
 
-// Load form data from local storage
+
 function loadFormData() {
-    // Retrieve entries from local storage
+    
     const contactEntries = JSON.parse(localStorage.getItem('contactEntries')) || [];
 
-    // Display last entry if available
+    
     if (contactEntries.length > 0) {
         const lastEntry = contactEntries[contactEntries.length - 1];
         document.getElementById('name').value = lastEntry.name;
@@ -205,17 +202,17 @@ function loadFormData() {
     }
 }
 
-// Load form data when the page loads
+
 window.onload = loadFormData;
 
 function searchGames() {
     const input = document.getElementById('searchInput').value.toLowerCase();
-    console.log('Search Input:', input); // Debugging line
+    console.log('Search Input:', input); 
     const cards = document.querySelectorAll('.card');
 
     cards.forEach(card => {
         const title = card.querySelector('h4').textContent.toLowerCase();
-        console.log('Card Title:', title); // Debugging line
+        console.log('Card Title:', title); 
         if (title.includes(input)) {
             card.style.display = 'block';
         } else {
